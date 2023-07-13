@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-const SingleItem = ({ item, removeItem, toggleItem }) => {
+const SingleItem = ({ item, removeItem, updateCompleted, index }) => {
   const { id, name, completed } = item;
   const [isChecked, setIsChecked] = useState(completed);
 
   const toggle = (event) => {
     const newIsChecked = event.target.checked;
     setIsChecked(newIsChecked);
-    toggleItem(id, newIsChecked);
+    updateCompleted(index, newIsChecked);
   };
 
   return (
