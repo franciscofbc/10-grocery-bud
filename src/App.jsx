@@ -6,6 +6,8 @@ import Items from './components/Items';
 const App = () => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')));
 
+  console.log(items);
+
   const removeItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
     setItems(newItems);
@@ -14,14 +16,16 @@ const App = () => {
 
   const toggleItem = (id, completed) => {
     // console.log(items.find((item) => item.id === id));
-    console.log(completed);
-    const teste = items.find((item) => {
+    // console.log(completed);
+    // const teste = items.find((item) => {
+    items.find((item) => {
       if (item.id === id) {
+        // setItems([...items, { ...item, completed }]);
         return { ...item, completed };
       }
     });
 
-    console.log(teste);
+    // console.log(teste);
   };
 
   useEffect(() => {
