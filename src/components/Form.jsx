@@ -22,11 +22,14 @@ const Form = ({ items, setItems }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        className="form-input"
         type="text"
         value={name}
         onChange={(event) => setName(event.target.value)}
       />
-      <button type="submit">add item</button>
+      <button className="btn" type="submit">
+        add item
+      </button>
     </form>
   );
 };

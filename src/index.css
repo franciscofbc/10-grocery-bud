@@ -53,6 +53,7 @@ html {
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
   --fixed-width: 600px;
+  --fluid-width: 90vw;
 
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -253,3 +254,76 @@ ul {
   margin-top: 1rem;
 }
 /* ============= PROJECT CSS =============== */
+
+main {
+  max-width: 480px;
+  width: var(--fluid-width);
+  margin: 0 auto;
+  margin-top: 8rem;
+}
+
+.container {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+}
+
+.container:hover {
+  box-shadow: var(--shadow-4);
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--grey-900);
+}
+
+form {
+  margin: 1.5rem 0 2rem;
+  display: flex;
+}
+
+.form-input {
+  border-radius: 0;
+  border-top-left-radius: var(--borderRadius);
+  border-bottom-left-radius: var(--borderRadius);
+}
+
+form .btn {
+  min-width: 6.25rem;
+  border-radius: 0;
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.item div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item div label {
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+  color: var(--grey-900);
+  font-size: 0.8125rem;
+}
+
+.item .btn {
+  padding: 0;
+  padding: 0.125rem 0.25rem;
+  background: var(--black);
+  font-size: 0.75rem;
+}
+
+.item .btn:hover {
+  background: var(--primary-700);
+}

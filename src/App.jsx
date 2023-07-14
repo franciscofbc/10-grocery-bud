@@ -4,7 +4,9 @@ import Form from './components/Form';
 import Items from './components/Items';
 
 const App = () => {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')));
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem('items')) || []
+  );
 
   const removeItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
@@ -24,8 +26,8 @@ const App = () => {
   return (
     <main>
       <ToastContainer position="top-center" />
-      <section>
-        <h1>grocery bud</h1>
+      <section className="container">
+        <h1 className="title">grocery bud</h1>
         <Form items={items} setItems={setItems} />
         <Items
           items={items}

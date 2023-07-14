@@ -11,21 +11,23 @@ const SingleItem = ({ item, removeItem, updateCompleted, index }) => {
   };
 
   return (
-    <article>
-      <input
-        type="checkbox"
-        name=""
-        id={name}
-        checked={isChecked}
-        onChange={toggle}
-      />
-      <label
-        htmlFor={name}
-        style={{ textDecoration: isChecked && 'line-through' }}
-      >
-        {name}
-      </label>
-      <button type="button" onClick={() => removeItem(id)}>
+    <article className="item">
+      <div>
+        <input
+          type="checkbox"
+          name=""
+          id={name}
+          checked={isChecked}
+          onChange={toggle}
+        />
+        <label
+          htmlFor={name}
+          style={{ textDecoration: isChecked && 'line-through' }}
+        >
+          {name}
+        </label>
+      </div>
+      <button className="btn" type="button" onClick={() => removeItem(id)}>
         delete
       </button>
     </article>
