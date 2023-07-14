@@ -327,3 +327,7 @@ form .btn {
 .item .btn:hover {
   background: var(--primary-700);
 }
+
+.Toastify__toast {
+  text-transform: capitalize;
+}
