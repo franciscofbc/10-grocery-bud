@@ -1,15 +1,14 @@
 import SingleItem from './SingleItem';
 
-const Items = ({ items, removeItem, updateCompleted }) => {
+const Items = ({ items, removeItem, editItem }) => {
   return (
     <section>
-      {items.map((item, index) => (
+      {items.map((item) => (
         <SingleItem
           key={item.id}
           item={item}
           removeItem={removeItem}
-          updateCompleted={updateCompleted}
-          index={index}
+          editItem={editItem}
         />
       ))}
     </section>

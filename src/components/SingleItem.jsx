@@ -1,28 +1,20 @@
-import { useState } from 'react';
-
-const SingleItem = ({ item, removeItem, updateCompleted, index }) => {
+const SingleItem = ({ item, removeItem, editItem }) => {
   const { id, name, completed } = item;
-  const [isChecked, setIsChecked] = useState(completed);
-
-  const toggle = (event) => {
-    const newIsChecked = event.target.checked;
-    setIsChecked(newIsChecked);
-    updateCompleted(index, newIsChecked);
-  };
 
   return (
     <article className="item">
       <div>
         <input
           type="checkbox"
-          name=""
           id={name}
-          checked={isChecked}
-          onChange={toggle}
+          checked={completed}
+          onChange={() => {
+            editItem(id);
+          }}
         />
         <label
           htmlFor={name}
-          style={{ textDecoration: isChecked && 'line-through' }}
+          style={{ textDecoration: completed && 'line-through' }}
         >
           {name}
         </label>

@@ -1,17 +1,14 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { nanoid } from 'nanoid';
 
-const Form = ({ items, setItems }) => {
+const Form = ({ addItem }) => {
   const [name, setName] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     if (name) {
-      const item = { id: nanoid(), name, completed: false };
-      const newItems = [...items, item];
-      setItems(newItems);
+      addItem(name);
       setName('');
       toast.success('item added to the list');
       return;
@@ -25,7 +22,7 @@ const Form = ({ items, setItems }) => {
         className="form-input"
         type="text"
         value={name}
-        onChange={(event) => setName(event.target.value)}
+        onChange={(e) => setName(e.target.value)}
       />
       <button className="btn" type="submit">
         add item
